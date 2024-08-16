@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { Route, RouterModule } from '@angular/router';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { AuthGuardService } from '@services';
 
 import { AppComponent } from './app.component';
@@ -62,9 +63,10 @@ const routes: Route[] = [
     CoreModule,
     RouterModule.forRoot(routes, {
       enableTracing: false,
-      initialNavigation: 'enabledBlocking',
+      initialNavigation: 'enabledNonBlocking',
     }),
     FormsModule,
+    LoadingBarModule,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
